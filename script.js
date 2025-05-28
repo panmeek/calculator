@@ -1,6 +1,19 @@
-let num1 = 0;
-let num2 = 0;
+let num1 = null;
+let num2 = null;
 let operator = "";
+
+const screen = document.querySelector(".screen");
+const numbers = document.querySelectorAll(".number");
+
+numbers.forEach(number => {
+    number.addEventListener("click", inputNumber);
+});
+
+function inputNumber(event) {
+    const number = event.target.textContent;
+    num1 = number;
+    screen.textContent = `${num1}`;
+}
 
 function add(a, b) {
     return a + b;
